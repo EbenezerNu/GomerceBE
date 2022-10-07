@@ -31,10 +31,13 @@ login_model = rest_api.model('LoginModel', {"email": fields.String(required=True
                                             "password": fields.String(required=True, min_length=4, max_length=16)
                                             })
 
-user_edit_model = rest_api.model('UserEditModel', {"userID": fields.String(required=True, min_length=1, max_length=32),
-                                                   "username": fields.String(required=True, min_length=2, max_length=32),
-                                                   "email": fields.String(required=True, min_length=4, max_length=64)
-                                                   })
+user_edit_model = rest_api.model('UserEditModel', 
+    {
+        "userID": fields.String(required=True, min_length=1, max_length=32),
+        "username": fields.String(required=True, min_length=2, max_length=32),
+        "email": fields.String(required=True, min_length=4, max_length=64)
+    }
+)
 
 
 """
