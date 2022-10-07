@@ -62,8 +62,10 @@ def token_required(f):
             current_user = Users.get_by_email(data["email"])
 
             if not current_user:
-                return {"success": False,
-                        "msg": "Sorry. Wrong auth token. This user does not exist."}, 400
+                return {
+                        "success": False,
+                        "msg": "Sorry. Wrong auth token. This user does not exist."
+                    }, 400
 
             token_expired = db.session.query(JWTTokenBlocklist.id).filter_by(jwt_token=token).scalar()
 
